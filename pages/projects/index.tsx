@@ -11,7 +11,7 @@ export default function Projects() {
       link: '',
     },
     {
-      title: 'Calculator Design Web App',
+      title: 'Calculator Design Web App', //PIP
       description: 'Created a responsive web calculator for cemetery pricing using HTML and JavaScript, based on backend business logic and user workflows.',
       tech: ['HTML', 'JavaScript', 'UI/UX'],
       link: '',
