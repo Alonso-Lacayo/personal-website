@@ -5,7 +5,7 @@ import ProjectCard from '../../components/ProjectCard';
 export default function Projects() {
   const projects = [
     {
-      title: 'FPGA Capstone – Post Quantum Cryptography',
+      title: 'FPGA Capstone - Post Quantum Cryptography',
       description: 'Built and simulated a lattice-based encryption scheme using VHDL and ModelSim on Intel DE10 FPGA. Implemented Butterfly Units, optimized NTT, and verified encryption output.',
       tech: ['VHDL', 'ModelSim', 'Intel DE10', 'Cryptography'],
       link: '',
