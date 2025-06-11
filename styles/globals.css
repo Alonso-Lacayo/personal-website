@@ -8,8 +8,9 @@
   }
 
   body {
-    @apply bg-[#0e0e10] text-white font-sans antialiased;
+    @apply bg-background text-white font-sans antialiased;
     font-family: 'Space Grotesk', sans-serif;
+    background: linear-gradient(120deg, #101014 0%, #181a20 100%);
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -33,7 +34,7 @@
   }
 
   a {
-    @apply text-blue-400 hover:text-blue-300 transition-colors duration-200;
+    @apply text-primary hover:text-secondary transition-colors duration-200;
   }
 }
 
@@ -43,14 +44,19 @@
   }
 
   .btn {
-    @apply px-6 py-2 rounded-lg font-medium transition-all duration-200;
+    @apply px-6 py-2 rounded-lg font-medium transition-all duration-200 shadow;
   }
 
   .btn-primary {
-    @apply bg-blue-600 hover:bg-blue-700 text-white;
+    @apply bg-primary hover:bg-secondary text-white shadow-lg;
   }
 
   .btn-secondary {
     @apply bg-gray-700 hover:bg-gray-600 text-white;
+  }
+
+  .hero-card {
+    @apply border border-primary/30 shadow-glass rounded-xl backdrop-blur-md;
+    background: linear-gradient(120deg, rgba(24,26,32,0.95) 60%, rgba(6,182,212,0.08) 100%);
   }
 }

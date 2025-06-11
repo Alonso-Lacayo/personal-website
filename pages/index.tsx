@@ -7,7 +7,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col bg-[#0e0e10]">
       <Header />
       <main className="flex-1 flex items-center justify-center">
-        <section className="bg-black/60 p-10 rounded-2xl shadow-2xl border border-white/10 max-w-2xl w-full text-center">
+        <section className="hero-card p-10 max-w-2xl w-full text-center">
           <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-white">
             Hi, I&apos;m Alonso Lacayo <span className="inline-block">👋</span>
           </h1>
