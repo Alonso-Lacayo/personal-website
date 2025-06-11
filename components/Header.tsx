@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 export default function Header() {
-  const router = typeof window !== 'undefined' ? require('next/router').useRouter() : { pathname: '' };
+  const router = useRouter();
   return (
     <header className="sticky top-0 z-30 flex justify-between items-center p-6 bg-background/80 backdrop-blur-md shadow-lg border-b border-white/10">
       <h1 className="text-2xl font-bold text-white">Alonso Lacayo</h1>
