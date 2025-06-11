@@ -1,15 +1,29 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export default function Header() {
+  const router = typeof window !== 'undefined' ? require('next/router').useRouter() : { pathname: '' };
   return (
-    <header className="bg-white shadow-md py-4 px-6 flex justify-between items-center">
-      <h1 className="text-xl font-bold text-gray-800">Alonso Lacayo</h1>
-      <nav className="space-x-4">
-        <Link href="/" className="text-blue-600 hover:underline">Home</Link>
-        <Link href="/resume" className="text-blue-600 hover:underline">Resume</Link>
-        <Link href="/projects" className="text-blue-600 hover:underline">Projects</Link>
-        <Link href="/certifications" className="text-blue-600 hover:underline">Certifications</Link>
-        <Link href="/contact" className="text-blue-600 hover:underline">Contact</Link>
+    <header className="sticky top-0 z-30 flex justify-between items-center p-6 bg-background/80 backdrop-blur-md shadow-lg border-b border-white/10">
+      <h1 className="text-2xl font-bold text-white">Alonso Lacayo</h1>
+      <nav className="space-x-2 md:space-x-4">
+        {[
+          { href: '/', label: 'Home' },
+          { href: '/resume', label: 'Resume' },
+          { href: '/projects', label: 'Projects' },
+          { href: '/certifications', label: 'Certifications' },
+          { href: '/contact', label: 'Contact' },
+        ].map(({ href, label }) => (
+          <Link key={href} href={href} legacyBehavior>
+            <a
+              className={`inline-block px-3 py-1 rounded-md font-medium transition-colors duration-200
+                text-primary hover:bg-primary/10 hover:text-white
+                ${router.pathname === href ? 'bg-primary text-white' : ''}`}
+            >
+              {label}
+            </a>
+          </Link>
+        ))}
       </nav>
     </header>
   );
