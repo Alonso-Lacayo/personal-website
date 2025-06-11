@@ -28,7 +28,7 @@ export default function Home() {
           </p>
           <h3 className="text-lg font-semibold text-secondary mb-1">Career Objective</h3>
           <p className="text-white/80">
-            As a recent graduate, my career objective is to apply my formal education in computer engineering in conjunction with knowledge and experience acquired as a team member on multiple software projects. The combination of academic training and hands-on project work provides immediate value to your engineering team while keeping me laser-focused on growing my long-term contribution to your company's mission and innovation efforts.
+            As a recent graduate, my career objective is to apply my formal education in computer engineering in conjunction with knowledge and experience acquired as a team member on multiple software projects. The combination of academic training and hands-on project work provides immediate value to your engineering team while keeping me laser-focused on growing my long-term contribution to your company&apos;s mission and innovation efforts.
           </p>
         </section>
         <section className="hero-card p-8 max-w-2xl w-full text-left">
