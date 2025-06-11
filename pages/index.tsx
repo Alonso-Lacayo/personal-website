@@ -43,6 +43,50 @@ export default function Home() {
             ))}
           </div>
         </section>
+        <section className="hero-card p-8 max-w-2xl w-full text-left">
+          <h2 className="text-2xl font-bold text-primary mb-4">Experience</h2>
+          <div className="flex flex-col gap-6">
+            {/* Inti Consulting Services */}
+            <div>
+              <div className="flex justify-between items-center mb-1">
+                <span className="font-semibold text-white">Inti Consulting Services</span>
+                <span className="text-sm text-white/60">Villanova, PA | Feb 2024 – May 2024</span>
+              </div>
+              <div className="italic text-secondary mb-1">Software Intern</div>
+              <ul className="list-disc list-inside text-white/80 text-sm ml-2">
+                <li>Spearheaded the development of a UI/UX for a pricing calculator tailored to Cemetery services by converting backend logic into a simple web interface.</li>
+                <li>Refined and debugged calculator logic using UML diagrams and ensured accuracy for price estimations.</li>
+                <li>Designed an intuitive HTML interface from scratch, integrating advanced JavaScript functions to dynamically update the UI based on user inputs.</li>
+                <li>Overcame numerous challenges in development, such as applying JavaScript skills to HTML code, which further sharpened my problem-solving skills.</li>
+              </ul>
+            </div>
+            {/* Villanova University */}
+            <div>
+              <div className="flex justify-between items-center mb-1">
+                <span className="font-semibold text-white">Villanova University</span>
+                <span className="text-sm text-white/60">San Francisco, CA | Jun 2024 – Aug 2024</span>
+              </div>
+              <div className="italic text-secondary mb-1">Research Assistant</div>
+              <ul className="list-disc list-inside text-white/80 text-sm ml-2">
+                <li>Conducted comprehensive blockchain technology analysis by identifying emerging blockchain technologies, assessing their market positioning and technological offerings, to identify industry trends and innovation opportunities.</li>
+                <li>Analyzed 15+ Web3 security competitors of non-mainstream Web3 security startups, delineating their product offerings, strategic market placement, and consumer insights to spotlight potential market disruptors.</li>
+                <li>Synthesized research findings to create a strategic market map, culminating in the recommendation of cutting-edge blockchain solutions tailored to enhance company competitiveness in the digital landscape.</li>
+              </ul>
+            </div>
+            {/* Corporación San Felipe */}
+            <div>
+              <div className="flex justify-between items-center mb-1">
+                <span className="font-semibold text-white">Corporación San Felipe</span>
+                <span className="text-sm text-white/60">Managua, Nicaragua | Jun 2022 – Aug 2022</span>
+              </div>
+              <div className="italic text-secondary mb-1">Construction Supervisor</div>
+              <ul className="list-disc list-inside text-white/80 text-sm ml-2">
+                <li>Oversaw and directed field crews under supervision to optimize both work quality and operational efficiency.</li>
+                <li>Worked collaboratively with management and fellow supervisors to strategically organize operations, ensuring the achievement of ambitious schedule targets.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>
