@@ -31,6 +31,18 @@ export default function Home() {
             As a recent graduate, my career objective is to apply my formal education in computer engineering in conjunction with knowledge and experience acquired as a team member on multiple software projects. The combination of academic training and hands-on project work provides immediate value to your engineering team while keeping me laser-focused on growing my long-term contribution to your company's mission and innovation efforts.
           </p>
         </section>
+        <section className="hero-card p-8 max-w-2xl w-full text-left">
+          <h2 className="text-2xl font-bold text-primary mb-4">Technical Skills</h2>
+          <div className="flex flex-wrap gap-3">
+            {[
+              'Java', 'C', 'C++', 'JavaScript', 'Python', 'Solidity', 'VHDL', 'ModelSim', 'SQL', 'HTML', 'ARM', 'MIPS', 'FPGA', 'AutoCAD', 'Microsoft Excel', 'Tableau'
+            ].map((skill) => (
+              <span key={skill} className="bg-primary/10 text-primary px-4 py-2 rounded-full font-medium text-sm shadow">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </section>
       </main>
       <Footer />
     </div>
