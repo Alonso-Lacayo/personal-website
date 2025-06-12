@@ -10,7 +10,6 @@ function BlockchainNetworkBG() {
   useEffect(() => {
     const svg = svgRef.current;
     if (!svg) return;
-    let frame = 0;
     let animationId: number;
     const nodes = Array.from({ length: 18 }, (_, i) => ({
       x: Math.random() * 100,
@@ -19,7 +18,6 @@ function BlockchainNetworkBG() {
       dy: (Math.random() - 0.5) * 0.2,
     }));
     function animate() {
-      frame++;
       nodes.forEach((node) => {
         node.x += node.dx;
         node.y += node.dy;
