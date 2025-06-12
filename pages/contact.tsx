@@ -1,5 +1,6 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { Linkedin, Github } from 'lucide-react';
 
 export default function Contact() {
   return (
@@ -14,17 +15,17 @@ export default function Contact() {
               href="https://www.linkedin.com/in/alonso-lacayo-mierisch/"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-primary w-48"
+              className="btn btn-primary w-48 flex items-center justify-center gap-2"
             >
-              LinkedIn
+              <Linkedin size={20} /> LinkedIn
             </a>
             <a
               href="https://github.com/Alonso-Lacayo"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-secondary w-48"
+              className="btn btn-secondary w-48 flex items-center justify-center gap-2"
             >
-              GitHub
+              <Github size={20} /> GitHub
             </a>
           </div>
         </section>
