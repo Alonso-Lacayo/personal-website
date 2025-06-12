@@ -11,7 +11,7 @@ function BlockchainNetworkBG() {
     const svg = svgRef.current;
     if (!svg) return;
     let animationId: number;
-    const nodes = Array.from({ length: 18 }, (_, i) => ({
+    const nodes = Array.from({ length: 18 }, () => ({
       x: Math.random() * 100,
       y: Math.random() * 100,
       dx: (Math.random() - 0.5) * 0.2,
