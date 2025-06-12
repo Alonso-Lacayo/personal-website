@@ -9,9 +9,8 @@ export default function Header() {
       <nav className="space-x-2 md:space-x-4">
         {[
           { href: '/', label: 'Home' },
-          { href: '/resume', label: 'Resume' },
+          { href: '/about', label: 'About' },
           { href: '/projects', label: 'Projects' },
-          { href: '/certifications', label: 'Certifications' },
           { href: '/contact', label: 'Contact' },
         ].map(({ href, label }) => (
           <Link key={href} href={href} legacyBehavior>
