@@ -10,7 +10,6 @@ export default function Header() {
         {[
           { href: '/', label: 'Home' },
           { href: '/about', label: 'About' },
-          { href: '/projects', label: 'Projects' },
           { href: '/contact', label: 'Contact' },
         ].map(({ href, label }) => (
           <Link key={href} href={href} legacyBehavior>
