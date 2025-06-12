@@ -1,8 +1,36 @@
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+
 export default function Contact() {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <h1 className="text-4xl font-bold">Contact Page</h1>
-      </div>
-    );
-  }
+  return (
+    <div className="min-h-screen flex flex-col bg-background">
+      <Header />
+      <main className="flex-1 flex items-center justify-center">
+        <section className="hero-card p-10 max-w-md w-full text-center">
+          <h1 className="text-3xl font-bold text-primary mb-4">Contact</h1>
+          <p className="text-white/80 mb-8">Let&apos;s connect! You can find me on:</p>
+          <div className="flex flex-col gap-4 items-center">
+            <a
+              href="https://www.linkedin.com/in/alonso-lacayo-mierisch/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary w-48"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="https://github.com/Alonso-Lacayo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-secondary w-48"
+            >
+              GitHub
+            </a>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
+}
   
