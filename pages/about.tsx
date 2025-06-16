@@ -1,6 +1,7 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -8,17 +9,17 @@ const sectionVariants = {
 };
 
 const VillanovaLogo = () => (
-  <img src="/Alonso.jpg" alt="Alonso" className="w-50 h-50 object-contain" />
+  <Image src="/Alonso.jpg" alt="Alonso" width={200} height={200} className="w-50 h-50 object-contain" />
 );
 
 const SkillIcons = () => (
   <div className="grid grid-cols-3 gap-4 w-full md:w-80 justify-items-center items-center">
-    <img src="/java.png" alt="Java" className="w-16 h-16" />
-    <img src="/C++.webp" alt="C++" className="w-12 h-13" />
-    <img src="/python.png" alt="Python" className="w-16 h-16" />
-    <img src="/JavaScript.png" alt="JavaScript" className="w-16 h-16" />
-    <img src="/C.png" alt="C" className="w-13 h-13" />
-    <img src="/FPGA.webp" alt="Quartus" className="w-12 h-12" />
+    <Image src="/java.png" alt="Java" width={64} height={64} className="w-16 h-16" />
+    <Image src="/C++.webp" alt="C++" width={48} height={52} className="w-12 h-13" />
+    <Image src="/python.png" alt="Python" width={64} height={64} className="w-16 h-16" />
+    <Image src="/JavaScript.png" alt="JavaScript" width={64} height={64} className="w-16 h-16" />
+    <Image src="/C.png" alt="C" width={52} height={52} className="w-13 h-13" />
+    <Image src="/FPGA.webp" alt="Quartus" width={48} height={48} className="w-12 h-12" />
   </div>
 );
 

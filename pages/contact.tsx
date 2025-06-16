@@ -14,7 +14,7 @@ export default function Contact() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: 'easeOut' }}
         >
-          <h2 className="text-2xl font-bold text-primary mb-4">Let's connect:</h2>
+          <h2 className="text-2xl font-bold text-primary mb-4">Let&apos;s connect:</h2>
           <form className="flex flex-col gap-4">
             <div>
               <label htmlFor="name" className="block text-white/80 mb-1">Name</label>

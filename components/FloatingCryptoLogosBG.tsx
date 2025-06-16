@@ -63,7 +63,7 @@ export default function FloatingCryptoLogosBG() {
     }
     animate();
     return () => cancelAnimationFrame(animationId);
-  }, []);
+  }, [logos]);
 
   return (
     <canvas
