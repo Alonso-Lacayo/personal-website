@@ -13,11 +13,11 @@ const VillanovaLogo = () => (
 
 const SkillIcons = () => (
   <div className="grid grid-cols-3 gap-4 w-full md:w-80 justify-items-center items-center">
-    <img src="/java.webp" alt="Java" className="w-16 h-16" />
-    <img src="/C++.webp" alt="C++" className="w-16 h-16" />
-    <img src="/python.webp" alt="Python" className="w-16 h-16" />
-    <img src="/JavaScript.webp" alt="JavaScript" className="w-16 h-16" />
-    <img src="/C.webp" alt="C" className="w-12 h-12" />
+    <img src="/java.png" alt="Java" className="w-16 h-16" />
+    <img src="/C++.webp" alt="C++" className="w-12 h-13" />
+    <img src="/python.png" alt="Python" className="w-16 h-16" />
+    <img src="/JavaScript.png" alt="JavaScript" className="w-16 h-16" />
+    <img src="/C.png" alt="C" className="w-13 h-13" />
     <img src="/FPGA.webp" alt="Quartus" className="w-12 h-12" />
   </div>
 );
