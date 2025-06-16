@@ -1,10 +1,6 @@
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 
-function FloatingCryptoLogosBG() {
+export default function FloatingCryptoLogosBG() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const logos = [
     '/btc.webp',
@@ -74,38 +70,7 @@ function FloatingCryptoLogosBG() {
       ref={canvasRef}
       width={0}
       height={0}
-      style={{ position: 'absolute', inset: 0, zIndex: 0, pointerEvents: 'none', width: '100%', height: '100%' }}
+      style={{ position: 'fixed', top: 0, left: 0, zIndex: 0, pointerEvents: 'none', width: '100vw', height: '100vh' }}
     />
   );
-}
-
-export default function Home() {
-  return (
-    <div className="min-h-screen flex flex-col bg-background relative overflow-hidden">
-      <FloatingCryptoLogosBG />
-      <Header />
-      <main className="flex-1 flex items-center justify-center relative z-10">
-        <motion.section
-          className="hero-card p-10 max-w-2xl w-full text-center"
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: 'easeOut' }}
-        >
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-white">
-            Hi, I&apos;m Alonso Lacayo <span className="inline-block">👋</span>
-          </h1>
-          <h2 className="text-2xl md:text-3xl font-semibold text-cyan-400 mb-4">
-            Software Engineer & Blockchain Enthusiast
-          </h2>
-          <p className="text-white/80 text-lg mb-8">
-            Computer Engineering graduate passionate about software, cryptography, and blockchain. Always eager to learn and build impactful solutions.
-          </p>
-          <Link href="/about">
-            <button className="btn btn-primary text-lg px-8 py-3">Learn More About Me</button>
-          </Link>
-        </motion.section>
-      </main>
-      <Footer />
-    </div>
-  );
-}
+} 
