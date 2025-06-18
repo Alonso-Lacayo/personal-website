@@ -2,8 +2,70 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Linkedin, Github } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
+  useEffect(() => {
+    emailjs.init('0QCbCHzNf6OsFxSOg');
+  }, []);
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [status, setStatus] = useState({
+    type: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setStatus({ type: '', message: '' });
+
+    try {
+      const result = await emailjs.send(
+        'service_n0eeewk',
+        'template_iyu5p2t',
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message
+        },
+        '0QCbCHzNf6OsFxSOg'
+      );
+
+      console.log('EmailJS Response:', result);
+      if (result.status === 200) {
+        setStatus({
+          type: 'success',
+          message: 'Thank you! Your message has been sent successfully.'
+        });
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      console.error('Email error:', error);
+      setStatus({
+        type: 'error',
+        message: 'Oops! Something went wrong. Please try again later.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Header />
@@ -20,12 +82,25 @@ export default function Contact() {
               I&apos;m always open to discussing new opportunities and interesting projects.
             </p>
 
-            <form className="space-y-6">
+            {status.message && (
+              <div className={`mb-6 p-4 rounded-lg ${
+                status.type === 'success' 
+                  ? 'bg-[rgb(34,197,94)]/10 text-[rgb(34,197,94)]' 
+                  : 'bg-red-500/10 text-red-500'
+              }`}>
+                {status.message}
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-[rgb(250,204,21)] mb-2">Name</label>
                 <input
                   type="text"
                   id="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
                   className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-[rgb(250,204,21)] text-white"
                   placeholder="Your name"
                 />
@@ -35,6 +110,9 @@ export default function Contact() {
                 <input
                   type="email"
                   id="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
                   className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-[rgb(250,204,21)] text-white"
                   placeholder="your@email.com"
                 />
@@ -43,16 +121,22 @@ export default function Contact() {
                 <label htmlFor="message" className="block text-[rgb(250,204,21)] mb-2">Message</label>
                 <textarea
                   id="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   rows={4}
+                  required
                   className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-[rgb(250,204,21)] text-white resize-none"
                   placeholder="Your message..."
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-[rgb(250,204,21)] to-[rgb(239,68,68)] text-white font-medium py-3 px-6 rounded-lg hover:scale-105 transform transition-all duration-200"
+                disabled={isSubmitting}
+                className={`w-full bg-gradient-to-r from-[rgb(250,204,21)] to-[rgb(239,68,68)] text-white font-medium py-3 px-6 rounded-lg transition-all duration-200 ${
+                  isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:scale-105 transform'
+                }`}
               >
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </motion.section>
