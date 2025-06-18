@@ -8,9 +8,9 @@ export default function Contact() {
     <div className="min-h-screen flex flex-col bg-background">
       <Header />
       <main className="flex-1 flex items-center justify-center p-6">
-        <div className="flex flex-col md:flex-row gap-6 max-w-6xl w-full">
+        <div className="flex flex-col md:flex-row gap-6 w-full max-w-5xl">
           <motion.section
-            className="hero-card p-8 flex-1"
+            className="hero-card p-8 md:w-[60%]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -43,7 +43,7 @@ export default function Contact() {
                 <label htmlFor="message" className="block text-[rgb(250,204,21)] mb-2">Message</label>
                 <textarea
                   id="message"
-                  rows={5}
+                  rows={4}
                   className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-[rgb(250,204,21)] text-white resize-none"
                   placeholder="Your message..."
                 ></textarea>
@@ -57,21 +57,21 @@ export default function Contact() {
             </form>
           </motion.section>
 
-          <div className="flex flex-col gap-6 md:w-80">
+          <div className="flex flex-col gap-6 md:w-[40%]">
             <motion.section
-              className="hero-card p-8"
+              className="hero-card p-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               <h2 className="text-2xl font-bold text-[rgb(250,204,21)] mb-4">Contact</h2>
-              <p className="text-white/80 mb-6">You can find me on:</p>
-              <div className="flex flex-col gap-4">
+              <p className="text-white/80 mb-4">You can find me on:</p>
+              <div className="flex flex-col gap-3">
                 <a
                   href="https://www.linkedin.com/in/alonso-lacayo-mierisch/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white/5 hover:bg-white/10 text-white px-4 py-3 rounded-lg flex items-center gap-3 transition-all duration-200"
+                  className="bg-white/5 hover:bg-white/10 text-white px-4 py-2.5 rounded-lg flex items-center gap-3 transition-all duration-200"
                 >
                   <Linkedin size={20} />
                   LinkedIn
@@ -80,16 +80,25 @@ export default function Contact() {
                   href="https://github.com/Alonso-Lacayo"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white/5 hover:bg-white/10 text-white px-4 py-3 rounded-lg flex items-center gap-3 transition-all duration-200"
+                  className="bg-white/5 hover:bg-white/10 text-white px-4 py-2.5 rounded-lg flex items-center gap-3 transition-all duration-200"
                 >
                   <Github size={20} />
                   GitHub
                 </a>
+                <div className="mt-2 pt-3 border-t border-white/10">
+                  <p className="text-[rgb(250,204,21)] font-medium mb-2">Email me at:</p>
+                  <a 
+                    href="mailto:Lacayo004@gmail.com"
+                    className="text-white hover:text-[rgb(234,88,12)] transition-colors duration-200"
+                  >
+                    Lacayo004@gmail.com
+                  </a>
+                </div>
               </div>
             </motion.section>
 
             <motion.section
-              className="hero-card p-8"
+              className="hero-card p-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
