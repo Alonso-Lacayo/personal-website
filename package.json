@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/matter-js": "^0.19.8",
     "framer-motion": "^12.16.0",
     "lucide-react": "^0.513.0",
+    "matter-js": "^0.20.0",
     "next": "15.3.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

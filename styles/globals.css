@@ -2,6 +2,147 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Theme 1: Cyber Night (Current theme refined) */
+.theme-cyber-night {
+  --bg-primary: 0, 0, 0;
+  --bg-secondary: 10, 10, 18;
+  --accent-primary: 6, 182, 212;  /* cyan-500 */
+  --accent-secondary: 59, 130, 246;  /* blue-500 */
+  --text-primary: 255, 255, 255;
+  --text-secondary: 186, 230, 253;  /* cyan-100 */
+}
+
+/* Theme 2: Ocean Depths */
+.theme-ocean-depths {
+  --bg-primary: 15, 23, 42;  /* slate-900 */
+  --bg-secondary: 30, 41, 59;  /* slate-800 */
+  --accent-primary: 56, 189, 248;  /* sky-400 */
+  --accent-secondary: 129, 140, 248;  /* indigo-400 */
+  --text-primary: 255, 255, 255;
+  --text-secondary: 186, 230, 253;  /* sky-100 */
+}
+
+/* Theme 3: Neo Brutalism */
+.theme-neo-brutalism {
+  --bg-primary: 23, 23, 23;
+  --bg-secondary: 38, 38, 38;
+  --accent-primary: 250, 204, 21;  /* yellow-400 */
+  --accent-secondary: 239, 68, 68;  /* red-500 */
+  --text-primary: 255, 255, 255;
+  --text-secondary: 252, 211, 77;  /* yellow-300 */
+}
+
+/* Theme 4: Forest Mint */
+.theme-forest-mint {
+  --bg-primary: 17, 24, 39;  /* gray-900 */
+  --bg-secondary: 31, 41, 55;  /* gray-800 */
+  --accent-primary: 52, 211, 153;  /* emerald-400 */
+  --accent-secondary: 16, 185, 129;  /* emerald-600 */
+  --text-primary: 255, 255, 255;
+  --text-secondary: 167, 243, 208;  /* emerald-200 */
+}
+
+/* Theme 5: Purple Haze */
+.theme-purple-haze {
+  --bg-primary: 17, 24, 39;  /* gray-900 */
+  --bg-secondary: 88, 28, 135;  /* purple-800 */
+  --accent-primary: 192, 132, 252;  /* purple-400 */
+  --accent-secondary: 236, 72, 153;  /* pink-500 */
+  --text-primary: 255, 255, 255;
+  --text-secondary: 216, 180, 254;  /* purple-200 */
+}
+
+:root {
+  --background-primary: 23, 23, 23;
+  --background-secondary: 38, 38, 38;
+  --accent-primary: 250, 204, 21;  /* yellow-400 */
+  --accent-secondary: 239, 68, 68;  /* red-500 */
+  --text-primary: 255, 255, 255;
+  --text-secondary: 252, 211, 77;  /* yellow-300 */
+}
+
+body {
+  color: rgb(var(--text-primary));
+  background: linear-gradient(
+    to bottom,
+    rgb(var(--background-primary)),
+    rgb(var(--background-secondary))
+  );
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.hero-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.btn {
+  @apply rounded-full transition-all duration-200 font-medium;
+}
+
+.btn-primary {
+  background: linear-gradient(
+    135deg,
+    rgb(var(--accent-primary)),
+    rgb(var(--accent-secondary))
+  );
+  @apply text-white hover:scale-105 transform transition-all duration-200;
+}
+
+.btn-secondary {
+  @apply bg-white/10 hover:bg-white/20 text-white;
+}
+
+.gradient-text {
+  background: linear-gradient(
+    135deg,
+    rgb(var(--accent-primary)),
+    rgb(var(--accent-secondary))
+  );
+  @apply bg-clip-text text-transparent;
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1em;
+  background: rgb(var(--accent-primary));
+  margin-left: 4px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.nav-link {
+  color: rgb(var(--text-primary));
+  font-weight: bold;
+  transition: all 0.2s ease;
+  padding: 0.5rem 1rem;
+  border: 2px solid transparent;
+}
+
+.nav-link:hover {
+  color: rgb(var(--accent-primary));
+  border-color: rgb(var(--accent-secondary));
+  background: rgba(var(--accent-secondary), 0.1);
+}
+
+.nav-link.active {
+  color: rgb(var(--accent-primary));
+  border-color: rgb(var(--accent-primary));
+  box-shadow: 2px 2px 0 rgb(var(--accent-secondary));
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -34,7 +175,7 @@
   }
 
   a {
-    @apply text-primary hover:text-secondary transition-colors duration-200;
+    @apply text-white hover:text-[rgb(234,88,12)] transition-colors duration-200;
   }
 }
 

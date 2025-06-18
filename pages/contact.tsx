@@ -7,70 +7,102 @@ export default function Contact() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Header />
-      <main className="flex-1 flex flex-col md:flex-row items-center justify-center gap-8">
-        <motion.section
-          className="hero-card p-8 max-w-md w-full mb-6 md:mb-0 text-left"
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: 'easeOut' }}
-        >
-          <h2 className="text-2xl font-bold text-primary mb-4">Let&apos;s connect:</h2>
-          <form className="flex flex-col gap-4">
-            <div>
-              <label htmlFor="name" className="block text-white/80 mb-1">Name</label>
-              <input id="name" name="name" type="text" className="w-full rounded bg-background border border-white/10 px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Your name" />
-            </div>
-            <div>
-              <label htmlFor="email" className="block text-white/80 mb-1">Email</label>
-              <input id="email" name="email" type="email" className="w-full rounded bg-background border border-white/10 px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" placeholder="your@email.com" />
-            </div>
-            <div>
-              <label htmlFor="message" className="block text-white/80 mb-1">Message</label>
-              <textarea id="message" name="message" rows={4} className="w-full rounded bg-background border border-white/10 px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Your message" />
-            </div>
-            <button type="submit" className="btn btn-primary w-full mt-2">Send Message</button>
-          </form>
-        </motion.section>
-        <div className="flex flex-col gap-4 w-full md:w-auto">
+      <main className="flex-1 flex items-center justify-center p-6">
+        <div className="flex flex-col md:flex-row gap-6 max-w-6xl w-full">
           <motion.section
-            className="hero-card p-10 max-w-md w-full text-center"
-            initial={{ opacity: 0, y: 40 }}
+            className="hero-card p-8 flex-1"
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
+            transition={{ duration: 0.5 }}
           >
-            <h1 className="text-3xl font-bold text-primary mb-4">Contact</h1>
-            <p className="text-white/80 mb-8">You can find me on:</p>
-            <div className="flex flex-col gap-4 items-center">
-              <a
-                href="https://www.linkedin.com/in/alonso-lacayo-mierisch/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-primary w-48 flex items-center justify-center gap-2"
+            <h1 className="text-3xl font-bold text-[rgb(250,204,21)] mb-2">Let&apos;s Connect</h1>
+            <p className="text-white/80 mb-8">
+              I&apos;m always open to discussing new opportunities and interesting projects.
+            </p>
+
+            <form className="space-y-6">
+              <div>
+                <label htmlFor="name" className="block text-[rgb(250,204,21)] mb-2">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-[rgb(250,204,21)] text-white"
+                  placeholder="Your name"
+                />
+              </div>
+              <div>
+                <label htmlFor="email" className="block text-[rgb(250,204,21)] mb-2">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-[rgb(250,204,21)] text-white"
+                  placeholder="your@email.com"
+                />
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-[rgb(250,204,21)] mb-2">Message</label>
+                <textarea
+                  id="message"
+                  rows={5}
+                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-[rgb(250,204,21)] text-white resize-none"
+                  placeholder="Your message..."
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                className="w-full bg-gradient-to-r from-[rgb(250,204,21)] to-[rgb(239,68,68)] text-white font-medium py-3 px-6 rounded-lg hover:scale-105 transform transition-all duration-200"
               >
-                <Linkedin size={20} /> LinkedIn
-              </a>
-              <a
-                href="https://github.com/Alonso-Lacayo"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-secondary w-48 flex items-center justify-center gap-2"
-              >
-                <Github size={20} /> GitHub
-              </a>
-            </div>
+                Send Message
+              </button>
+            </form>
           </motion.section>
-          <motion.section
-            className="hero-card p-6 max-w-md w-full text-left flex flex-col gap-2"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
-          >
-            <h2 className="text-xl font-bold text-primary mb-2">Availability</h2>
-            <div className="flex items-center gap-3">
-              <span className="inline-block w-3 h-3 rounded-full bg-green-500 mr-2 animate-pulse" />
-              <span className="text-white/90 font-medium">I am available to start a new project! Feel free to reach out!</span>
-            </div>
-          </motion.section>
+
+          <div className="flex flex-col gap-6 md:w-80">
+            <motion.section
+              className="hero-card p-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <h2 className="text-2xl font-bold text-[rgb(250,204,21)] mb-4">Contact</h2>
+              <p className="text-white/80 mb-6">You can find me on:</p>
+              <div className="flex flex-col gap-4">
+                <a
+                  href="https://www.linkedin.com/in/alonso-lacayo-mierisch/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white/5 hover:bg-white/10 text-white px-4 py-3 rounded-lg flex items-center gap-3 transition-all duration-200"
+                >
+                  <Linkedin size={20} />
+                  LinkedIn
+                </a>
+                <a
+                  href="https://github.com/Alonso-Lacayo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white/5 hover:bg-white/10 text-white px-4 py-3 rounded-lg flex items-center gap-3 transition-all duration-200"
+                >
+                  <Github size={20} />
+                  GitHub
+                </a>
+              </div>
+            </motion.section>
+
+            <motion.section
+              className="hero-card p-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <h2 className="text-2xl font-bold text-[rgb(250,204,21)] mb-4">Availability</h2>
+              <div className="flex items-start gap-3">
+                <div className="w-3 h-3 rounded-full bg-[rgb(34,197,94)] mt-1.5 animate-pulse" />
+                <p className="text-white/90">
+                  I am available to start a new project! Feel free to reach out!
+                </p>
+              </div>
+            </motion.section>
+          </div>
         </div>
       </main>
       <Footer />

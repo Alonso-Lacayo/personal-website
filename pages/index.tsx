@@ -4,19 +4,14 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 
-function FloatingCryptoLogosBG() {
+function FloatingTechBG() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const logos = [
-    '/btc.webp',
-    '/eth.webp',
-    '/sol.webp',
-    '/ada.webp',
-    '/doge.webp',
-    '/ltc.webp',
-    '/usdc.webp',
-    '/bnb.webp',
-    '/xrp.webp',
-    '/tether.webp',
+    '/Python.webp',
+    '/Java.webp',
+    '/JavaScript.webp',
+    '/C.webp',
+    '/C++.webp',
   ];
 
   useEffect(() => {
@@ -29,7 +24,7 @@ function FloatingCryptoLogosBG() {
     canvas.width = canvas.offsetWidth * dpr;
     canvas.height = canvas.offsetHeight * dpr;
     ctx.scale(dpr, dpr);
-    const numLogos = 60;
+    const numLogos = 40;
     const logoObjs = Array.from({ length: numLogos }, (_, i) => {
       const img = new window.Image();
       const obj = {
@@ -37,10 +32,10 @@ function FloatingCryptoLogosBG() {
         src: logos[i % logos.length],
         x: Math.random() * canvas.offsetWidth,
         y: Math.random() * canvas.offsetHeight,
-        size: 32 + Math.random() * 40,
+        size: 40 + Math.random() * 48,
         speedX: (Math.random() - 0.5) * 0.3,
         speedY: (Math.random() - 0.5) * 0.2,
-        opacity: 0.15 + Math.random() * 0.2,
+        opacity: 0.12 + Math.random() * 0.15,
         isLoaded: false,
       };
       img.onload = () => { obj.isLoaded = true; };
@@ -82,7 +77,7 @@ function FloatingCryptoLogosBG() {
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-background relative overflow-hidden">
-      <FloatingCryptoLogosBG />
+      <FloatingTechBG />
       <Header />
       <main className="flex-1 flex items-center justify-center relative z-10">
         <motion.section
@@ -91,18 +86,34 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: 'easeOut' }}
         >
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-white">
-            Hi, I&apos;m Alonso Lacayo <span className="inline-block">👋</span>
-          </h1>
-          <h2 className="text-2xl md:text-3xl font-semibold text-cyan-400 mb-4">
-            Software Engineer & Blockchain Enthusiast
-          </h2>
-          <p className="text-white/80 text-lg mb-8">
-            Computer Engineering graduate passionate about software, cryptography, and blockchain. Always eager to learn and build impactful solutions.
-          </p>
-          <Link href="/about">
-            <button className="btn btn-primary text-lg px-8 py-3">Learn More About Me</button>
-          </Link>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <h1 className="text-4xl md:text-5xl font-bold mb-2 text-white">
+              Hi, I&apos;m Alonso Lacayo<span className="typing-cursor"></span>
+            </h1>
+            <h2 className="gradient-text text-2xl md:text-3xl font-semibold mb-6">
+              Software Engineer 
+            </h2>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <p className="text-white/80 text-lg mb-8 leading-relaxed max-w-xl mx-auto">
+              A Computer Engineering graduate passionate about crafting elegant solutions 
+              through innovative software development. Specializing in full-stack development 
+              and high-performance computing.
+            </p>
+            <Link href="/about">
+              <button className="btn btn-primary text-lg px-8 py-3 hover:scale-105 transform transition-transform">
+                Learn More About Me
+              </button>
+            </Link>
+          </motion.div>
         </motion.section>
       </main>
       <Footer />
