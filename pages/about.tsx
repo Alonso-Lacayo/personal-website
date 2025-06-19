@@ -2,6 +2,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import FloatingTechBG from '../components/FloatingTechBG';
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -26,6 +27,7 @@ const SkillIcons = () => (
 export default function About() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <FloatingTechBG />
       <Header />
       <main className="flex-1 flex flex-col items-center justify-center gap-10 py-10">
         <motion.section

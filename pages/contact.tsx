@@ -4,6 +4,7 @@ import { Linkedin, Github } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
+import FloatingTechBG from '../components/FloatingTechBG';
 
 export default function Contact() {
   useEffect(() => {
@@ -68,6 +69,7 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <FloatingTechBG />
       <Header />
       <main className="flex-1 flex items-center justify-center p-6">
         <div className="flex flex-col md:flex-row gap-6 w-full max-w-5xl">

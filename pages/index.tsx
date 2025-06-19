@@ -2,77 +2,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { useEffect, useRef } from 'react';
-
-function FloatingTechBG() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const logos = [
-    '/Python.webp',
-    '/Java.webp',
-    '/JavaScript.webp',
-    '/C.webp',
-    '/C++.webp',
-  ];
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-    let animationId: number;
-    const dpr = window.devicePixelRatio || 1;
-    canvas.width = canvas.offsetWidth * dpr;
-    canvas.height = canvas.offsetHeight * dpr;
-    ctx.scale(dpr, dpr);
-    const numLogos = 40;
-    const logoObjs = Array.from({ length: numLogos }, (_, i) => {
-      const img = new window.Image();
-      const obj = {
-        img,
-        src: logos[i % logos.length],
-        x: Math.random() * canvas.offsetWidth,
-        y: Math.random() * canvas.offsetHeight,
-        size: 40 + Math.random() * 48,
-        speedX: (Math.random() - 0.5) * 0.3,
-        speedY: (Math.random() - 0.5) * 0.2,
-        opacity: 0.12 + Math.random() * 0.15,
-        isLoaded: false,
-      };
-      img.onload = () => { obj.isLoaded = true; };
-      img.onerror = () => { obj.isLoaded = false; };
-      img.src = obj.src;
-      return obj;
-    });
-    function animate() {
-      if (!canvas || !ctx) return;
-      ctx.clearRect(0, 0, canvas.offsetWidth, canvas.offsetHeight);
-      logoObjs.forEach((obj) => {
-        if (!obj.isLoaded) return;
-        ctx.globalAlpha = obj.opacity;
-        ctx.drawImage(obj.img, obj.x, obj.y, obj.size, obj.size);
-        obj.x += obj.speedX;
-        obj.y += obj.speedY;
-        if (obj.x > canvas.offsetWidth) obj.x = -obj.size;
-        if (obj.x < -obj.size) obj.x = canvas.offsetWidth;
-        if (obj.y > canvas.offsetHeight) obj.y = -obj.size;
-        if (obj.y < -obj.size) obj.y = canvas.offsetHeight;
-      });
-      ctx.globalAlpha = 1;
-      animationId = requestAnimationFrame(animate);
-    }
-    animate();
-    return () => cancelAnimationFrame(animationId);
-  }, []);
-
-  return (
-    <canvas
-      ref={canvasRef}
-      width={0}
-      height={0}
-      style={{ position: 'absolute', inset: 0, zIndex: 0, pointerEvents: 'none', width: '100%', height: '100%' }}
-    />
-  );
-}
+import FloatingTechBG from '../components/FloatingTechBG';
 
 export default function Home() {
   return (
