@@ -13,17 +13,6 @@ const VillanovaLogo = () => (
   <Image src="/Alonso.jpg" alt="Alonso" width={180} height={180} className="w-50 h-50 object-contain" />
 );
 
-const SkillIcons = () => (
-  <div className="grid grid-cols-3 gap-4 w-full md:w-80 justify-items-center items-center">
-    <Image src="/java.png" alt="Java" width={64} height={64} className="w-16 h-16" />
-    <Image src="/C++.webp" alt="C++" width={48} height={52} className="w-12 h-13" />
-    <Image src="/python.png" alt="Python" width={64} height={64} className="w-16 h-16" />
-    <Image src="/JavaScript.png" alt="JavaScript" width={64} height={64} className="w-16 h-16" />
-    <Image src="/C.png" alt="C" width={52} height={52} className="w-13 h-13" />
-    <Image src="/FPGA.webp" alt="Quartus" width={48} height={48} className="w-12 h-12" />
-  </div>
-);
-
 export default function About() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -53,19 +42,16 @@ export default function About() {
           </div>
         </motion.section>
         <motion.section
-          className="hero-card p-8 max-w-3xl w-full flex flex-col md:flex-row items-center md:items-stretch gap-6"
+          className="hero-card p-8 max-w-3xl w-full"
           variants={sectionVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
         >
-          <div className="flex-shrink-0 flex items-center justify-center md:justify-start w-full md:w-1/3 mb-4 md:mb-0">
-            <SkillIcons />
-          </div>
-          <div className="flex-1 flex flex-col justify-center text-center md:text-left">
+          <div className="flex flex-col justify-center text-center">
             <h2 className="text-2xl font-bold text-[rgb(250,204,21)] mb-4">Technical Skills</h2>
-            <div className="flex flex-wrap gap-3 justify-center md:justify-start">
+            <div className="flex flex-wrap gap-3 justify-center">
               {[
                 'Java', 'C', 'C++', 'JavaScript', 'Python', 'React', 'Node.js', 'SQL', 'HTML', 'CSS', 'Git', 'REST APIs', 'VHDL', 'ModelSim', 'ARM', 'MIPS'
               ].map((skill) => (
